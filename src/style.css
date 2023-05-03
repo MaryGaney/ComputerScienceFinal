@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Raleway:wght@300&display=swap');
+
+/*font-family: 'Hind Siliguri', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
+#bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:-1;
+}
+
+#main{
+  position:absolute;
+  /*overflow:hidden;*/
+  font-family: 'Hind Siliguri', sans-serif;
+  /* height:auto; */
+  width:auto;
+  z-index:1;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+#title{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  margin-top:60%;
+  opacity: 100%;
+  visibility: hidden;
+  text-align:center;
+  font-size:550%;
+  box-shadow: 2px,2px,red;
+
+
+}
+
+
+@keyframes animationName {
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-o-keyframes animationName{
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-moz-keyframes animationName{
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-webkit-keyframes animationName{
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
+}   
+#main #startButton {
+  font-family: 'Hind Siliguri', sans-serif;
+  opacity:100%;
+  visibility: visible;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.25;
+  right: 70%;
+  margin-left: 60%;
+
+   -webkit-animation: animationName 5s infinite;
+   -moz-animation: animationName 5s infinite;
+   -o-animation: animationName 5s infinite;
+    animation: animationName 5s infinite;
+}
+/*goals inputs*/
+#goals{
+  visibility:hidden;
+  width: 40%;
+  margin:5%;
+  margin-left:30%;
+  margin-bottom:15%;
+  margin-top:50%;
+  padding-top:20%;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+
+.inputGoals{
+  padding: 4%;
+  margin:3%;
+  width: 120%;
+  font-family: 'Raleway', sans-serif;
+}
+
+#alertGoals{
+  visibility:hidden;
+  height:0;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  opacity: 100%;
+  font-size:auto;
+  padding-left:15%;
+  width:max-content;
+  text-justify: auto;
+  box-shadow: 2px,2px,red;
+}
+
+
+/* settings button */
+.open-button {
+  font-family: 'Hind Siliguri', sans-serif;
+  opacity:100%;
+  visibility: visible;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.25;
+  margin-left: 90%;
+
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 30%;
+  right: 30%;
+  bottom: 10%;
+  border-radius: 10%;
+  z-index: 9;
+  height: 300px;
+  width: 40%;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Add styles to the form container */
+.form-container {
+  opacity: 75%;
+  background-color: white;
+}
+
+.form-container button{
+  font-family: 'Hind Siliguri', sans-serif;
+  opacity:100%;
+  visibility: visible;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.25;
+  text-align:center;
+  align-content: center;
+
+
+  transition:all 250ms;
+  user-select: none;
+  -webkit-user-select:auto;
+  touch-action: manipulation;
+  vertical-align: baseline;
+
+}
+
+.form-container .cancel {
+  background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:3%;
+  opacity: 0.8;
+  margin-top: 3%;
+}
+.form-container #customColors {
+  background-color: gray;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:3%;
+  opacity: 0.8;
+  margin-top: 3%;
+}
+#customColors:hover{
+  opacity: 50%;
+}
+/* Add some hover effects to buttons */
+.form-container .open-button:hover {
+  opacity: 75%;
+}
+.form-container button:hover{
+  opacity:50%;
+}
+
+/*buttons at the bottom of the main page*/
+.buttons{
+  opacity: 90%;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+#displayStarsGalaxy {
+  opacity:100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: white;
+  background-color: darkgray;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+
+
+  cursor: pointer;
+  display: inline-flex;
+  line-height: 1.25;
+
+  margin-left:35%;
+  bottom:0%;
+  padding:1%;
+
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+#displayStarsGalaxy:hover,
+#displayStarsGalaxy:focus {
+  color:white;
+  opacity:40%;
+}
+
+#displayStarsGalaxy:hover {
+  transform: translateY(-1px);
+}
+
+#displayStarsGalaxy:active {
+  color: white;
+  transform: translateY(0);
+  opacity:100%;
+}
+
+
+#displayNotebook {
+  opacity:100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: white;
+  background-color: darkgray;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  display: inline-flex;
+  line-height: 1.25;
+  padding:1%;
+
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+#displayNotebook:hover,
+#displayNotebook:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: white;
+  opacity:40%;
+}
+
+#displayNotebook:hover {
+  transform: translateY(-1px);
+}
+
+#displayNotebook:active {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: white;
+  transform: translateY(0);
+  opacity:100%;
+}
