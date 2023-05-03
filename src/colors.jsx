@@ -23,6 +23,9 @@ console.log(partialGoals);
 //this will return an array of how many stars need to be the different chosen colors
 export function numberOfStarColors(){
 
+  let CIC = window.localStorage.getItem("ColorComplete");
+  let CIP = window.localStorage.getItem("ColorPartial");
+
   if(CIC == null){
     CIC = 0;
   }
