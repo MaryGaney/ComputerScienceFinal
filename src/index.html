@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Vite App</title>
+  </head>
+  <body>
+    <script type="module" src="/main.jsx"></script>
+    <script type="module" src="notebook.jsx"></script>
+    <div id="app">
+      <canvas id="bg" ></canvas>
+        <div id="main">
+
+          <h1 id="title">ONE GOOD THING</h1>
+          <button class="startButton" id="startButton">Click To Proceed →</button>
+          <div id="goals">
+              <h1 id="alertGoals" style="visibility: hidden;"></h1>
+                <input class="inputGoals" type="text" id="goodThing" placeholder="One Good Thing That Happened To You Today" name="goodThing">
+                <input class="inputGoals" type="number" id="yellowNumber" name="yellowNumber" placeholder="Goals Partially Completed Today">
+                <input class="inputGoals" type="number" id="greenNumber" placeholder = "Goals Completed Today">
+                <input class="inputGoals" type="submit" id="submitGoals" placeholder="submit" onclick="pullInfo()">
+          </div>
+          <div class="buttons" id="mainButtons">
+            <button id="displayStarsGalaxy">display your stars</button>
+            <button id="displayNotebook">display your notebook</button>
+            
+          </div>
+
+          <div class="colorSettings">
+
+          </div>
+
+          <button id="settingsButton" class="open-button" onclick="openForm()">Settings</button>
+          <div class="form-popup" id="myForm">
+            <form action="" class="form-container">
+              <!--
+              <p style="font-size:28px; text-align:center;" id="test">Click to display in 365 calendar</p>
+              <p style="font-size:14px; text-align:center;">(the default is viewing 365 days in galaxy view)</p>
+              <button id="displayStarsCalendar">display your stars</button>
+              <p style="font-size:14px; text-align:center;">(click to display in 365 view, collect stars one day at a time!)</p>
+              <button id="displayStarsCalendarDay">display your stars</button>
+              <p style="font-size:14px; text-align:center;">(click to display in galaxy view, collect stars one day at a time!)</p>
+              <button id="displayStarsGalaxyDay">display your stars!</button>
+-->
+              <button type="button" id="customColors" onclick="openColors()">edit the colors</button>
+              <div id="colorChoose" style="height: 0;">
+                <p style="font-size:14px; text-align:center; display:inline; margin-right:40px; margin-left: 40px;" >completed goal</p>
+                <p style="font-size:14px; text-align:center; display:inline; margin-right:40px;">partially completed goal</p>
+
+                <br>
+                <input type="color" name="colorInput" id="cic" style="display:inline; margin-right:24%; margin-left:13%;">
+                <input type="color" name="colorInput" id="cip" style="display:inline; margin-right:21%;">
+                <button type="button" class="btn cancel" id="saveColors" style="visibility: hidden;" onclick="closeColors()">Save</button> 
+                <button type="button" class="btn cancel" id="closeColorsButton" style="visibility: hidden;" onclick="closeColors()">Close</button>                                
+              </div>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <script>
+      function pullInfo(){
+        //get the info from each element
+        let goodThingInfo = document.getElementById("goodThing");
+        let yellowNumberInfo = document.getElementById("yellowNumber");
+        let greenNumberInfo = document.getElementById("greenNumber");
+
+        window.localStorage.setItem('goodThingToday', goodThingInfo.value);
+        window.localStorage.setItem('yellowNumberToday', yellowNumberInfo.value);
+        window.localStorage.setItem('greenNumberToday', greenNumberInfo.value);
+
+        const alertTitle = document.getElementById("alertGoals");
+        alertTitle.innerHTML = "Please Reload The Page";
+        alertTitle.style.visibility = "visible";
+        alertTitle.style.color = "white";
+
+
+        const goodThingText = document.getElementById('goodThing');
+        const yellowNumber = document.getElementById('yellowNumber');
+        const greenNumber = document.getElementById('greenNumber');
+        goodThingText.style.visibility = "hidden";
+        goodThingText.style.height = 0;
+        yellowNumber.style.visibility = "hidden";
+        yellowNumber.style.height = 0;
+        greenNumber.style.visibility = "hidden";
+        greenNumber.style.height = 0;
+        document.getElementById("submitGoals").style.visibility = "hidden";
+        document.getElementById("submitGoals").style.height = 0;
+      }
+
+      function openColors(){
+        document.getElementById("colorChoose").style.visibility = "visible";
+        document.getElementById("colorChoose").style.height = "auto";
+        document.getElementById("closeColorsButton").style.visibility = "visible";
+        document.getElementById("saveColors").style.visibility = "visible";
+        
+      }
+      function closeColors(){
+        
+        document.getElementById("colorChoose").style.visibility = "hidden";
+        document.getElementById("closeColorsButton").style.visibility = "hidden";
+        document.getElementById("saveColors").style.visibility = "hidden";
+        document.getElementById("colorChoose").style.height = "0px";
+
+        //cic color input complete
+        //cip  color input partial
+        //cim  color input missed
+        let CIC = document.getElementById("cic");
+        let CIP = document.getElementById("cip");
+        
+        CIC.addEventListener("change", function(){
+          const colorChosen = CIC.value;
+          console.log(colorChosen);
+          window.localStorage.setItem('ColorComplete', colorChosen);
+        });
+        
+        CIP.addEventListener("change", function(){
+          const colorChosen = CIP.value;
+          console.log(colorChosen);
+          window.localStorage.setItem('ColorPartial', colorChosen);
+          return colorChosen
+        });
+
+      }
+
+
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+        document.getElementById("displayStarsGalaxy").style.visibility = "hidden";
+        document.getElementById("displayNotebook").style.visibility = "hidden";
+        document.getElementById("colorChoose").style.visibility = "hidden";
+        //document.getElementById('goodThing').style.visibility = "hidden";
+        //document.getElementById('yellowNumber').style.visibility = "hidden";
+        //document.getElementById('greenNumber').style.visibility = "hidden";
+        //document.getElementById('submitGoals').style.visibility = "hidden";
+
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+        document.getElementById("displayStarsGalaxy").style.visibility = "visible";
+        document.getElementById("displayNotebook").style.visibility = "visible";   
+        //document.getElementById('goodThing').style.visibility = "visible";
+        //document.getElementById('yellowNumber').style.visibility = "visible";
+        //document.getElementById('greenNumber').style.visibility = "visible";   
+        //document.getElementById('submitGoals').style.visibility = "visible";  
+      }
+
+    </script>
+  </body>
+</html>
