@@ -1,4 +1,4 @@
 # ComputerScienceFinal
 
 check out the docs here
-https://senior-year.notion.site/Colors-jsx-428039c183f04f83b6954ab3ec157836
+https://www.notion.so/senior-year/One-Good-Thing-327d4bacb64748e996a0271b6b8e6eb9?pvs=4
